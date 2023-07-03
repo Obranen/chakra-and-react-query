@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useQuery} from '@tanstack/react-query'
 import {IPost} from '../../../models/IPost'
 import Item from './Item/Item'
+import {Container, Heading} from '@chakra-ui/react'
 
 const List = () => {
   const getPosts = async () => {
@@ -19,18 +20,29 @@ const List = () => {
   })
 
   if (posts.isLoading) {
-    return <h1>Loading...</h1>
+    return <Container marginTop={'20px'}>
+      <Heading as={'h3'} size={'md'} textAlign={'center'} marginTop={'20px'}>
+        Loading...
+      </Heading>
+    </Container>
   }
 
   if (posts.error) {
-    return <h1>Error... Посты не загружены</h1>
+    return <Container marginTop={'20px'}>
+      <Heading color={'red'} as={'h3'} size={'md'} textAlign={'center'} marginTop={'20px'}>
+        Error... Посты не загружены
+      </Heading>
+    </Container>
   }
   return (
-    <ul>
+    <>
+      <Heading as={'h3'} size={'md'} textAlign={'center'} marginTop={'30px'}>
+        List
+      </Heading>
       {posts.data.map((post: IPost) => (
         <Item post={post} key={post.id}/>
       ))}
-    </ul>
+    </>
   )
 }
 
