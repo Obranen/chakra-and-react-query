@@ -1,24 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "Dima"
+      "title": "Hello",
+      "author": "Dima",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "json-server",
-      "author": "Dima"
-    },
-    {
-      "id": 3,
-      "title": "json-server",
-      "author": "Dima"
-    },
-    {
-      "id": 4,
-      "title": "json-server",
-      "author": "Dima"
+      "title": "Hi",
+      "author": "Maria",
+      "id": 2
     }
   ]
 }

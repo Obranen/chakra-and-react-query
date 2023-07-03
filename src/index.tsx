@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import {ChakraProvider} from '@chakra-ui/react'
+import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
 
 const queryClient = new QueryClient()
 
@@ -16,6 +17,7 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
         <App/>
+        <ReactQueryDevtools/>
       </ChakraProvider>
     </QueryClientProvider>
   </React.StrictMode>
